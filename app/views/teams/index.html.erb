@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<h1>AVAILABLE TEAMS</h1>
+
+<table>
+  <thead>
+    <tr>
+      <h2>
+        <th> <%= link_to 'PAKISTAN', new_team_path %></th>
+
+        <th><%= link_to 'INDIA', new_team_path %></th>
+
+        <th><%= link_to 'ENGLAND', new_team_path %></th>
+
+        <th><%= link_to 'NEW ZELAND', new_team_path %></th>
+
+        <th><%= link_to 'AUSTRALIA', new_team_path %></th>
+
+        <th><%= link_to 'SOUTH AFRICA', new_team_path %></th>
+
+        <th><%= link_to 'SRI LANKA', new_team_path %></th>
+
+        <th><%= link_to 'WEST INDIES', new_team_path %></th>
+
+      </h2>
+      <th colspan="8"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @teams.each do |team| %>
+      <tr>
+        <td><%= team.title %></td>
+        <td><%= team.select %></td>
+        <td><%= team.user_id %></td>
+        <td><%= link_to 'Show', team %></td>
+        <td><%= link_to 'Edit', edit_team_path(team) %></td>
+        <td><%= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'CREATE NEW TEAM', new_team_path %>
